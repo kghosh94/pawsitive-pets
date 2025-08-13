@@ -1,0 +1,30 @@
+<!--Start product Banner section-->
+<section class="product-banner-sec">
+    <img [src]="bannerImages.pawImage" alt="paw" class="paw-1">
+    <img [src]="bannerImages.pawImage" alt="paw" class="paw-2">
+    <img [src]="bannerImages.pawImage" alt="paw" class="paw-3">
+    <div class="container">
+        <div class="row product-banner-row">
+            <div class="col-12 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="product-banner-info-area">
+                    <h2 class="banner-heading">{{ BannerTitle }}</h2>
+                    <h5>{{ BannerSubtitle }}</h5>
+                    <a href="javascript:void(0)" (click)="scrollToSection('product-card-section')" class="shop-btn white-theme-btn">Shop Now</a>
+                </div>
+            </div>
+            <div class="col-12 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="banner-product-shots">
+                    <ul class="product-image-group">
+                        <li>
+                            <img [src]="bannerImages.hipMobility" alt="Hip & Mobility" class="first-product-img">
+                        </li>
+                        <li>
+                            <img [src]="bannerImages.calmingStress" alt="Claming & Stress" class="second-product-img">
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- // End product Banner section-->

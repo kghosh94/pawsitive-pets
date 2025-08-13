@@ -1,0 +1,20 @@
+<div class="product_slider_area swiper mySwiper2 main-swiper-{{ uniqueId }}">
+    <div class="swiper-wrapper" id="product-slider">
+        @for (sliderImg of product.productSlider; track sliderImg) {
+            <div class="swiper-slide">
+                <img [src]="sliderImg" [alt]="product.name" />
+            </div>
+        }
+    </div>
+    <div class="swiper-button-next main-swiper-next-{{ uniqueId }}"></div>
+    <div class="swiper-button-prev main-swiper-prev-{{ uniqueId }}"></div>
+</div>
+<div class="swiper mySwiper product_slider_bottom_area thumbs-swiper-{{ uniqueId }}">
+    <div class="swiper-wrapper" id="product-slider-bottom">
+        @for (sliderImg of product.productSlider; track sliderImg) {
+            <div class="swiper-slide">
+                <img [src]="sliderImg" [alt]="product.name" />
+            </div>
+        }
+    </div>
+</div>

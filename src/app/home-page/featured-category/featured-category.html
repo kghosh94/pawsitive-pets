@@ -1,0 +1,20 @@
+<!--Start featured category-->
+    <section class="feature_part padding_top">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="section_tittle text-center">
+                        <h2 class="collection_title">{{ sectionTitle }}</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row align-items-center justify-content-between">
+                @for (productsItems of products; track productsItems.id) {
+                    <div class="col-lg-6 col-md-12 col-sm-12 col-xs-12 category_box">
+                        <app-featured-product [featuredProducts]="productsItems"/>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <!--// End featured category-->

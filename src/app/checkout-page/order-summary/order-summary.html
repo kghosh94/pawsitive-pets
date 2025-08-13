@@ -1,0 +1,43 @@
+<div class="order_box">
+    <h2>Your Order</h2>
+    <div class="order-detail-head">
+        <div class="prodcuts-list">
+            <h5>Product</h5>
+        </div>
+        <div class="price-list">
+            <h5>Total</h5>
+        </div>
+    </div>
+    <ul class="list" id="order-list">
+        @for (item of orderItems; track item.products.id) {
+            <li>
+                <a href="#">
+                {{ item.products.name }}
+                <span class="middle">x {{ item.quantity }}</span>
+                <span class="last">{{ (item.products.price * item.quantity).toFixed(2) }}</span>
+                </a>
+            </li>
+        }
+        <!-- <li>
+            <a href="#">
+            Pawsitive Mobility Flex
+            <span class="middle">x 6</span>
+            <span class="last">$125.94</span>
+            </a>
+        </li> -->
+    </ul>
+    <ul class="list list_2" id="order-total-list">
+        <li>
+            <a href="#">
+            Shipping
+            <span>${{ shippingCost.toFixed(2) }}</span>
+            </a>
+        </li>
+        <li>
+            <a href="#">
+            total
+            <span>${{ getTotalPrice().toFixed(2) }}</span>
+            </a>
+        </li>
+    </ul>
+</div>

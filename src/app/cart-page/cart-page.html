@@ -1,0 +1,64 @@
+<section class="cart_area padding_top">
+    <div class="container">
+        @if ((cartItems$ | async)?.length === 0) {
+            <div class="empty-cart">
+                <img src="../../assets/empty-ico.svg" alt="Empty Cart" class="empty-cart-image">
+                <h2>Your cart is empty</h2>
+                <p>Looks like you haven't added anything to your cart yet.</p>
+                <a class="shop-btn shop-outline-btn" [routerLink]="['/']">Continue Shopping</a>
+            </div>
+        } @else {
+            <div class="cart_inner">
+                <div class="table-responsive">
+                    <table class="table cart-items-table">
+                        <thead>
+                            <tr>
+                                <th scope="col">Product</th>
+                                <th scope="col">Price</th>
+                                <th scope="col">Quantity</th>
+                                <th scope="col">Total</th>
+                                <th scope="col">&nbsp;</th>
+                            </tr>
+                        </thead>
+                        <tbody id="cart-body">
+                            @for (item of cartItems$ | async; track item.product.id) {
+                                <tr app-cart-item [itemCart]="item"></tr>
+                            }
+                        </tbody>
+                    </table>
+                </div>
+                <table class="table bottom-total-table">
+                    <tbody>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <h5>Shipping</h5>
+                            </td>
+                            <td>
+                                <h5 class="price-area">{{ shippingCharge | currency}}</h5>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                        <tr>
+                            <td>&nbsp;</td>
+                            <td>&nbsp;</td>
+                            <td>
+                                <h5>Total</h5>
+                            </td>
+                            <td>
+                                <h5 class="price-area" id="subtotal">{{ grandTotalPrice | currency }}</h5>
+                            </td>
+                            <td>&nbsp;</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <!-- <div class="subtotal-area"><h4 id="subtotal"></h4></div> -->
+                <div class="checkout_btn_inner">
+                    <a class="shop-btn shop-outline-btn" [routerLink]="['/']">Continue Shopping</a>
+                    <a id="proceed-checkout" class="shop-btn" [routerLink]="['/checkout-page']">Proceed to checkout</a>
+                </div>
+            </div>
+        }
+    </div>
+</section>

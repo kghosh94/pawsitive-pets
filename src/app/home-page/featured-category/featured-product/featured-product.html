@@ -1,0 +1,10 @@
+<div [id]="featuredProducts.id" class="single_feature_post_text">
+    <div class="product-left-info">
+        <p>{{ featuredProducts.productSubTitle }}</p>
+        <h3>{{ featuredProducts.name }}</h3>
+        <a [routerLink]="['/product-detail', featuredProducts.id]" class="feature_btn">Learn More ></a>
+    </div>
+    <div class="product-img-area">
+        <img [src]="featuredProducts.image" alt="{{ featuredProducts.name }}">
+    </div>
+</div>

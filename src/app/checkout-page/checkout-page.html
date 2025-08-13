@@ -1,0 +1,13 @@
+<div class="billing_details">
+    <div class="container">
+        <div class="row">
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-xs-12 checkout-left-area">
+                <h3>Billing Details</h3>
+                <app-checkout-form></app-checkout-form>
+            </div>
+            <div class="col-12 col-lg-6 col-md-12 col-sm-12 col-xs-12 checkout-right-area">
+                <app-order-summary [orderItems]="cartItems" [shippingCost]="shippingCharge"></app-order-summary>
+            </div>
+        </div>
+    </div>
+</div>

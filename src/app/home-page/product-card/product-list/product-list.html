@@ -1,0 +1,26 @@
+<div class="box_main">
+    <a class="product_card_link" [routerLink]="['/product-detail', products.id]">
+    <div class="product_card_img">
+        <img [src]="products.image" alt="{{ products.name}}">
+    </div>
+    </a>  
+    <h4 class="product_card_titile">{{ products.name }}</h4>
+    <p class="product_rating"><span class="review-no"><img src="./assets/green-review-star.svg" class="card_review_star">{{ products.rating }}</span>( {{products.noOfReview}} Reviews)</p>
+    <p class="price_text">
+        Price <span style="color: #262626;">{{ products.price }}</span>
+    </p>
+    <div class="btn_main">
+        <div class="buy_bt">
+        <a [routerLink]="['/product-detail', products.id]">Buy Now</a>
+        </div>
+        <div class="seemore_bt">
+            <button type="button" (click)="addToCart(products)" [disabled]="getQuantity() >= 5" class="cart_btn"><span class="product_cart_ico"><img src="./assets/cart.svg" alt="Cart"></span>Add to Cart </button>
+        </div>
+    </div>
+    @if (CartSuccessMsg) {
+        <div class="cart_success_msg">
+            <p>{{ CartSuccessMsg }}</p>
+        </div>
+    }
+</div>
+

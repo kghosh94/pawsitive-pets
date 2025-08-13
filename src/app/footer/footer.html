@@ -1,0 +1,24 @@
+<!-- footer section start -->
+<div class="footer_section" id="footer-section">
+    <div class="container">
+        <div class="footer_logo">
+        <a id="footer-logo-link" [href]="footerContent.link"><img [src]="footerContent.logo"></a>
+        </div>
+        <div class="footer_menu">
+            <ul id="footer-menu-listing">
+                @for (menu of footerMenu; track menu.id) {
+                    <li>
+                        <app-footer-menu [footerMenu]="menu"/>
+                    </li>
+                }
+            </ul>
+        </div>
+        <div class="location_main">Help Line  Number : <a [attr.href]="'tel:'+ footerContent.phoneNo">{{ footerContent.phoneNo }}</a></div>
+        <div class="copyright_section">
+            <div class="container">
+                <p class="copyright_text" id="copyright-content">© <span class="current-year">{{ currentYear }}</span> All Rights Reserved.</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- footer section end -->

@@ -1,0 +1,45 @@
+<!-- header top section start -->
+<div class="container main-header-container">
+    <div class="header_section_top" id="common-header-top">
+        <div class="header_section">
+            <div class="container">
+                <div class="containt_main">
+                    <div id="mySidenav" class="sidenav" [class.open]="isNavOpen">
+                        <a href="javascript:void(0)" class="closebtn" (click)="closeNav()">&times;</a>
+                        <ul class="menu-listing-group" id="menu-drawer-listing">
+                            @for (menu of NavMenu; track menu.id) {
+                                <li>
+                                    <app-nav-menu [Navmenu]="menu"></app-nav-menu>
+                                </li>
+                            }
+                        </ul>
+                    </div>
+                    <div class="header_left_area">
+                        <span class="toggle_icon" (click)="toggleNav()"><img src="assets/menu-ico.svg"></span>
+                    </div>
+                    <div class="header_middle_area">
+                        <div class="logo">
+                            <a [routerLink]="['/']"><img src="assets/pawsitivepets-logo.svg" alt="Logo"></a>
+                        </div>
+                    </div>
+                    <div class="header_right_area">
+                        <div class="header_box">
+                            @if (showCartIcon){
+                                <div class="login_menu">
+                                    <ul>
+                                        <li><a class="cart-link-area" [routerLink]="['/cart-page']" id="cart-link">
+                                            <img src="assets/cart-ico.svg" alt="Cart" class="cart-ico">
+                                            <span class="header-cart-counter" id="header-cart-count">{{ cartItemCount }}</span>
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- header top section start -->

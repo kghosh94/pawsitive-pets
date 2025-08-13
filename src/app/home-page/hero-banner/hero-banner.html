@@ -1,0 +1,19 @@
+<div class="banner_bg_main">
+    <!-- banner section start -->
+    <div class="container main-banner-container">
+        <div class="main_banner_content">
+            <h1 [innerHTML]="HeroBannerTitle"></h1>
+            <h5>{{ HeroBannerSubTitle }}</h5>
+            <a href="javascript:void(0)" (click)="scrollToSection('product-card-section')" class="shop-btn white-theme-btn">{{ btntxt }}</a>
+        </div>
+        <div class="banner-model-area">
+            <div class="banner-prodcut-model">
+                <img [src]="HeroBannerImages.hipMobility" alt="Product1" class="left-product-img">
+                <img [src]="HeroBannerImages.bannerCatImg" alt="Cat" class="banner-product-model">
+                <img [src]="HeroBannerImages.bannerDogImg" alt="Dog" class="second-banner-product-model">
+                <img [src]="HeroBannerImages.calmingStress" alt="Product1" class="right-product-img">
+            </div>
+        </div>
+    </div>
+    <!-- banner section end -->
+</div>

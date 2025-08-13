@@ -1,0 +1,16 @@
+<!--New Arrival-->
+    <section class="product_collection_area new_arrivals_area" id="product-card-section">
+        <h2 class="collection_title">{{ sectionTitle }}</h2>
+        <div class="container home-slider-area">
+            <div class="product-listing-area">
+                <div class="product_row" id="all-products">
+                    @for (product of products; track product.id) {
+                        <div product-list class="product-card" [products]="product"></div>
+                    }
+                </div>
+            </div>
+        </div>
+        <!-- <div class="explore-more-btn-area">
+            <a href="collections.html" class="explore-more-btn">Explore More <span class="explore-arrow"><img src="images/arrow-right.svg" alt="Arrow"></span></a>
+        </div> -->
+    </section>

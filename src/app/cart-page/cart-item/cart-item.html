@@ -1,0 +1,23 @@
+<td>
+    <div class="media">
+        <div class="d-flex">
+            <img [src]="itemCart.product.image" [alt]="itemCart.product.name">
+        </div>
+        <div class="media-body">
+            <p>{{ itemCart.product.name }}</p>
+        </div>
+    </div>
+</td>
+<td>{{ itemCart.product.price | currency }}</td>
+<td>
+    <div class="product_count">
+        <button class="number-decrement" (click)="decreaseQuantity()">-</button>
+        <input class="input-number" id="quantity-box" type="text" [value]="itemCart.quantity" min="1" max="5" readonly>
+        <button class="number-increment" (click)="increaseQuantity()">+</button>
+    </div>
+   
+    <span class="text-danger qty-error-msg">{{ quantitySelectMessage }}</span>
+   
+</td>
+<td>{{ totalPrice | currency }}</td>
+<td><button (click)="removeItem()" class="btn delete-item" data-id="7"></button></td>

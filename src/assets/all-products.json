@@ -1,0 +1,41 @@
+[
+    {
+    "id": 1,
+    "name": "Hip & Mobility",
+    "Shipping": "Free",
+    "productSubTitle": "Premium Quality",
+    "price": 20.99,
+    "rating": 3.5,
+    "noOfReview": 124,
+    "availability": true,
+    "image": "assets/hip-mobility-product.png",
+    "productSlider": [
+        "assets/hip-mobility-product.png",
+        "assets/hip-mobility-product.png",
+        "assets/hip-mobility-product.png",
+        "assets/hip-mobility-product.png",
+        "assets/hip-mobility-product.png"
+    ],
+    "description": "Our Hip & Mobility Supplement helps reduce stiffness, improve flexibility, and keep your furry friend active and happy—at any age."
+  },
+
+  {
+    "id": 2,
+    "name": "Claming & Stress",
+    "Shipping": "Free",
+    "productSubTitle": "Premium Quality",
+    "price": 15.99,
+    "rating": 4.8,
+    "noOfReview": 1357,
+    "availability": true,
+    "image": "assets/calming-stress-product.png",
+    "productSlider": [
+        "assets/calming-stress-product.png",
+        "assets/calming-stress-product.png",
+        "assets/calming-stress-product.png",
+        "assets/calming-stress-product.png",
+        "assets/calming-stress-product.png"
+    ],
+    "description": "Eases anxiety and stress naturally—ideal for travel, loud noises, or daily calm."
+  }
+]

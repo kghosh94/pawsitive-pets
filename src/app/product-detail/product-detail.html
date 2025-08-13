@@ -1,0 +1,21 @@
+<div class="product_image_area">
+    <div class="container">
+        <div class="row s_product_inner justify-content-between">
+            <div class="col-lg-5 col-xl-5 top-product-slider">
+                <ng-container *ngIf="product$ | async as product">
+                    <app-product-slider [product]="product"></app-product-slider>
+                </ng-container>
+            </div>
+            <div class="col-lg-7 col-xl-7">
+                <ng-container *ngIf="product$ | async as product">
+                    <app-product-summary [productSummary]="product" (addToCart)="handleAddToCart($event)"></app-product-summary>
+                </ng-container>
+                @if (successMessage) {
+                    <div class="alert alert-success" role="alert" id="cart-popup">
+                        <p id="cart-popup-message">{{ successMessage }}</p>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

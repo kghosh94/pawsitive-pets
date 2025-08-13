@@ -1,0 +1,193 @@
+<form class="row contact_form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()" novalidate>
+
+    <!-- First Name -->
+    <div class="col-md-6 form-group p_star">
+        <input type="text" class="form-control" id="first" formControlName="firstName" placeholder="First Name">
+        <div class="placeholder">First name <span class="mandatory-star">*</span></div>
+
+        @if (firstName.invalid && (firstName.dirty || firstName.touched || formSubmitted)) {
+            @if (firstName.errors?.['required']) {
+                <small class="error">First name is required.</small>
+            }
+            @if (firstName.errors?.['pattern']) {
+                <small class="error">Only letters and spaces are allowed.</small>
+            }
+        }
+    </div>
+
+    <!-- Last Name -->
+    <div class="col-md-6 form-group p_star">
+        <input type="text" class="form-control" id="last" formControlName="lastName" placeholder="Last Name">
+        <div class="placeholder">Last name <span class="mandatory-star">*</span></div>
+
+        @if (lastName.invalid && (lastName.dirty || lastName.touched || formSubmitted)) {
+            @if (lastName.errors?.['required']) {
+                <small class="error">Last name is required.</small>
+            }
+            @if (lastName.errors?.['pattern']) {
+                <small class="error">Only letters and spaces are allowed.</small>
+            }
+        }
+    </div>
+
+    <!-- Phone -->
+    <div class="col-md-6 form-group p_star">
+        <input type="tel" class="form-control" id="phone-no" formControlName="phone" maxlength="10" placeholder="Phone Number">
+        <div class="placeholder">Phone Number <span class="mandatory-star">*</span></div>
+
+        @if (phone.invalid && (phone.dirty || phone.touched || formSubmitted)) {
+            @if (phone.errors?.['required']) {
+                <small class="error">Phone number is required.</small>
+            }
+            @if (phone.errors?.['pattern']) {
+                <small class="error">Enter a valid 10-digit phone number.</small>
+            }
+        }
+    </div>
+
+    <!-- Email -->
+    <div class="col-md-6 form-group p_star">
+        <input type="email" class="form-control" id="email" formControlName="email" placeholder="Email Address">
+        <div class="placeholder">Email Address <span class="mandatory-star">*</span></div>
+
+        @if (email.invalid && (email.dirty || email.touched || formSubmitted)) {
+            @if (email.errors?.['required']) {
+                <small class="error">Email is required.</small>
+            }
+            @if (email.errors?.['email']) {
+                <small class="error">Enter a valid email address.</small>
+            }
+        }
+    </div>
+
+    <!-- Address Line 1 -->
+    <div class="col-md-12 form-group p_star">
+        <input type="text" class="form-control" id="addres1" formControlName="address1" placeholder="Address Line 1">
+        <div class="placeholder">Address Line 01 <span class="mandatory-star">*</span></div>
+
+        @if (address1.invalid && (address1.dirty || address1.touched || formSubmitted)) {
+            <small class="error">Address Line 1 is required.</small>
+        }
+    </div>
+
+    <!-- Address Line 2 -->
+    <div class="col-md-12 form-group p_star">
+        <input type="text" class="form-control" id="addres2" formControlName="address2" placeholder="Address Line 2">
+        <div class="placeholder">Address Line 02 <span class="mandatory-star">*</span></div>
+
+        @if (address2.invalid && (address2.dirty || address2.touched || formSubmitted)) {
+            <small class="error">Address Line 2 is required.</small>
+        }
+    </div>
+
+    <!-- City -->
+    <div class="col-md-6 form-group p_star">
+        <input type="text" class="form-control" id="city" formControlName="city" placeholder="Town / City">
+        <div class="placeholder">Town / City <span class="mandatory-star">*</span></div>
+
+        @if (city.invalid && (city.dirty || city.touched || formSubmitted)) {
+            <small class="error">City is required.</small>
+        }
+        @if (city.errors?.['pattern']) {
+            <small class="error">Only letters and spaces are allowed.</small>
+        }
+    </div>
+
+    <!-- State -->
+    <div class="col-md-6 form-group p_star">
+        <input type="text" class="form-control" id="state" formControlName="state" placeholder="State">
+        <div class="placeholder">State <span class="mandatory-star">*</span></div>
+
+        @if (state.invalid && (state.dirty || state.touched || formSubmitted)) {
+            <small class="error">State is required.</small>
+        }
+    </div>
+
+    <!-- District -->
+    <div class="col-md-6 form-group p_star">
+        <input type="text" class="form-control" id="district" formControlName="district" placeholder="District">
+        <div class="placeholder">District <span class="mandatory-star">*</span></div>
+
+        @if (district.invalid && (district.dirty || district.touched || formSubmitted)) {
+            <small class="error">District is required.</small>
+        }
+    </div>
+
+    <!-- Zip -->
+    <div class="col-md-6 form-group p_star">
+        <input type="text" class="form-control" id="zip" formControlName="zip" placeholder="Postcode / Zip" maxlength="6">
+        <div class="placeholder">Postcode / Zip <span class="mandatory-star">*</span></div>
+
+        @if (zip.invalid && (zip.dirty || zip.touched)) {
+            @if (zip.errors?.['required']) {
+                <small class="error">Zip code is required.</small>
+            }
+            @if (zip.errors?.['pattern']) {
+                <small class="error">Enter a valid zip code.</small>
+            }
+        }
+    </div>
+
+    <!-- Card Details -->
+    <div class="payment-area">
+        <div class="payment-area-form">
+            <div class="payment-area-head">
+                <div class="payment-title">
+                    <h4>Debit / Credit card</h4>
+                </div>
+                <div class="card_ico_area">
+                    <img src="../assets/cards-ico.png" alt="Payment Cards">
+                </div>
+            </div>
+
+            <div class="row">
+                <!-- Card Number -->
+                <div class="col-md-12 form-group p_star">
+                    <input type="tel" class="form-control" id="card-no" formControlName="cardNumber" maxlength="16" placeholder="Card Number">
+                    <div class="placeholder">Card Number <span class="mandatory-star">*</span></div>
+
+                    @if (cardNumber.invalid && (cardNumber.dirty || cardNumber.touched)) {
+                        @if (cardNumber.errors?.['required']) {
+                            <small class="error">Card number is required.</small>
+                        }
+                        @if (cardNumber.errors?.['pattern']) {
+                            <small class="error">Enter a valid 16-digit card number.</small>
+                        }
+                    }
+                </div>
+
+                <!-- Expiry Date -->
+                <div class="col-6 col-md-6 form-group p_star mb-0">
+                    <input type="tel" class="form-control" id="exp-month-year" formControlName="expiryDate" placeholder="MM/YY" maxlength="5">
+                    <div class="placeholder">MM/YY <span class="mandatory-star">*</span></div>
+
+                    @if (expiryDate.invalid && (expiryDate.dirty || expiryDate.touched)) {
+                        <small class="error">Expiry date is required.</small>
+                    }
+                </div>
+
+                <!-- CVV -->
+                <div class="col-6 col-md-6 form-group p_star mb-0">
+                    <input type="tel" class="form-control" id="cvv" formControlName="cvv" maxlength="3" placeholder="CVV">
+                    <div class="placeholder">CVV <span class="mandatory-star">*</span></div>
+
+                    @if (cvv.invalid && (cvv.dirty || cvv.touched)) {
+                        @if (cvv.errors?.['required']) {
+                            <small class="error">CVV is required.</small>
+                        }
+                        @if (cvv.errors?.['pattern']) {
+                            <small class="error">Enter a valid 3-digit CVV.</small>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        <!-- Submit -->
+        <div class="product-btn-group d-flex justify-content-end align-items-center">
+            <button type="submit" class="btn_3 shop-btn pay-btn" [disabled]="checkoutForm.invalid">
+                Proceed to Pay
+            </button>
+        </div>
+    </div>
+</form>

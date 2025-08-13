@@ -1,0 +1,39 @@
+<div class="s_product_text" id="product-container">
+    <div class="content_right_area">
+        <span class="product-review-area">
+            <img [src]="getStarImage(productSummary.rating)" class="product-review-star" alt="Review Star"><span class="review-no"> {{ productSummary.rating }}</span>({{productSummary.noOfReview}} Reviews)
+        </span>
+        <h3>{{ productSummary.name }}</h3>
+        <h2>${{ productSummary.price }}</h2>
+        <ul class="list">
+        <li>
+            <span class="info-title">Shiipping</span> :<span class="collection-info"> {{ productSummary.Shipping }}</span>
+        </li>
+        <li>
+            <span class="info-title">Availibility</span>
+            @if (productSummary.availability) {
+                <span class="stock-info in-stock"> : In Stock</span>
+            }
+            @else {
+                <span class="stock-info out-of-stock"> : Out of Stock</span>
+            }
+        </li>
+        </ul>
+        <p>{{ productSummary.description }}</p>
+        <div class="card_area">
+            <div class="product_count">
+                <button class="number-decrement" id="number-decrement-btn" (click)="decrementQty()" [disabled]="quantity <= 1">-</button>
+                <input class="input-number" id="quantity-box" type="text" [(ngModel)]="quantity" (ngModelChange)="onQuantityChange($event)" value="1" min="1" max="5">
+                <button class="number-increment" id="number-increment-btn" (click)="incrementQty()" [disabled]="quantity >= 5">+</button>
+            </div>
+        </div>
+        <div class="product-btn-group d-flex justify-content-start align-items-center">
+            <button type="button" class="btn_3 add-to-cart-btn shop-btn" (click)="onAddToCart()">add to cart</button>
+        </div>
+        <!-- @if (addTocartMessage) {
+            <div class="cart_success_msg">
+                <p>{{ addTocartMessage }}</p>
+            </div>
+        } -->
+    </div>
+</div>

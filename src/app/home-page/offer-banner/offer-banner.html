@@ -1,0 +1,18 @@
+<section class="product-offer-banner-sec">
+    <div class="container">
+        <div class="row offer-banner-row">
+            <div class="col-12 col-lg-7 col-md-7 col-sm-12 col-xs-12">
+                <div class="offer-banner-info-area">
+                    <h2 class="banner-heading" [innerHTML]="bannerContent.sectionTitle"></h2>
+                    <h5>{{ bannerContent.sectionDescription }}</h5>
+                    <a href="javascript:void(0)" (click)="scrollToSection('product-card-section')" class="shop-btn white-theme-btn">{{ bannerContent.buttonText }}</a>
+                </div>          
+            </div>
+            <div class="col-12 col-lg-5 col-md-5 col-sm-12 col-xs-12">
+                <div class="offer-banner-img-area">
+                    <img [src]="bannerContent.bannerImage" alt="Offer" class="offer-product-img">
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
