@@ -18,6 +18,14 @@ export class cartService {
 
     shippingCharge = 0;
 
+    constructor() {
+        // Load cart from localStorage on service init
+        const savedCart = localStorage.getItem('cart');
+        const parsedCart = savedCart ? JSON.parse(savedCart) : [];
+        this.cartItemsSubject.next(parsedCart);
+        this.updateCartCount(parsedCart);
+    }
+
     // Method to add items to the cart
     // It takes a product and a quantity as parameters
     addToCart(product: Product, quantity: number ):void {
@@ -48,6 +56,7 @@ export class cartService {
         }
 
         this.cartItemsSubject.next(currentItems);
+        localStorage.setItem('cart', JSON.stringify(currentItems)); // persist
         this.updateCartCount(currentItems);
     }
 
@@ -70,6 +79,7 @@ export class cartService {
             // Update the cart items subject with the modified array
             // This will trigger the subscribers to get the updated cart items
             this.cartItemsSubject.next(currentItems);
+            localStorage.setItem('cart', JSON.stringify(currentItems)); 
             this.updateCartCount(currentItems);
         }
     }   
@@ -79,6 +89,7 @@ export class cartService {
     removeFromCart(productId: number): void {
         const currentItems = this.cartItemsSubject.value.filter(item => item.product.id !== productId);
         this.cartItemsSubject.next(currentItems);
+        localStorage.setItem('cart', JSON.stringify(currentItems)); 
         this.updateCartCount(currentItems);
     }
 
