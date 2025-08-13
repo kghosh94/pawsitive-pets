@@ -100,6 +100,7 @@ export class cartService {
     }
 
     clearCart() {
+        localStorage.removeItem('cart');
         this.cartItemsSubject.next([]);
         this.cartItemCountSubject.next(0); 
     }
